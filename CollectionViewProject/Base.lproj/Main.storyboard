@@ -91,6 +91,7 @@
                                         <constraint firstAttribute="trailing" secondItem="BGS-Nm-5nz" secondAttribute="trailing" constant="25" id="Y1N-79-3YO"/>
                                     </constraints>
                                     <connections>
+                                        <outlet property="headerImage" destination="BGS-Nm-5nz" id="F5r-1v-aMo"/>
                                         <outlet property="headerLabel" destination="NJo-mf-CLm" id="byI-3P-39d"/>
                                     </connections>
                                 </collectionReusableView>

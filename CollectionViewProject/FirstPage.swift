@@ -133,18 +133,17 @@ extension FirstPage : UICollectionViewDelegate,UICollectionViewDataSource{
  func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView
     
     {
-     print(#function)
+       print(#function)
         let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "header", for: indexPath) as! SectionHeader
- print(#function)
+       print(#function)
          header.headerLabel.text = objectArray[indexPath.section].SectionName
-        
-     
-        
-        //let index = indexPath.section
-        //header.addGestureRecognizer(UITapGestureRecognizer(target: self, action: Selector(("tapGesture:"))))
-       // header.addGestureRecognizer(UITapGestureRecognizer(target: self, action: Selector("tapGesture(indexPath)")))
-//    header.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(tapGesture1)))
-//
+        if objectArray[indexPath.section].Expand{
+        header.headerImage.image = UIImage(named:"Down")
+        }
+        else
+        {
+              header.headerImage.image = UIImage(named:"rightArrow")
+        }
         let gestureRecognizer: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(didSelectSection(gesture:)))
         header.addGestureRecognizer(gestureRecognizer)
         return header
@@ -158,7 +157,7 @@ extension FirstPage : UICollectionViewDelegate,UICollectionViewDataSource{
     var index = 0
   let indexPaths = self.firstPageCollection.indexPathsForVisibleSupplementaryElements(ofKind: UICollectionElementKindSectionHeader)
     
-   
+    
     for indexPath in indexPaths {
         
         if (gesture.view as? SectionHeader) == firstPageCollection.supplementaryView(forElementKind: UICollectionElementKindSectionHeader, at: indexPath){
@@ -167,14 +166,17 @@ extension FirstPage : UICollectionViewDelegate,UICollectionViewDataSource{
             objectArray[(indexPath.section)].Expand = !objectArray[indexPath.section].Expand
         }
     }
-    for i in 0..<objectArray[index].SectionObjects.count
-      {
-  firstPageCollection.reloadItems(at: [IndexPath(row: i, section: index)])
+//    for i in 0..<objectArray[index].SectionObjects.count
+//      {
+//
+//        print(objectArray[index].SectionObjects)
+// firstPageCollection.reloadItems(at: [IndexPath(row: i, section: index)])
+//
+//    }
     
-
-  
+    self.firstPageCollection.reloadSections([index])
     
-    }}}
+    }}
     
 //
 //  @objc  func tapGesture1(gestureRecognizer: UITapGestureRecognizer)
@@ -213,7 +215,7 @@ extension FirstPage : UICollectionViewDelegate,UICollectionViewDataSource{
 //    }
 
     
-  
+
 extension FirstPage: UICollectionViewDelegateFlowLayout{
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
