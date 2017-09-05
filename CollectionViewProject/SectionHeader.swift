@@ -10,11 +10,14 @@ import UIKit
 
 class SectionHeader: UICollectionReusableView {
   
+    @IBOutlet weak var headerButton: UIButton!
+
     
     @IBOutlet weak var headerImage: UIImageView!
     
        
-        @IBOutlet weak var headerLabel: UILabel!
+   
+    @IBOutlet weak var headerLabel: UILabel!
         
     }
 

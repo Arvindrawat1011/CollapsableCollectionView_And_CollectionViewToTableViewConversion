@@ -75,22 +75,35 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="rightArrow" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="BGS-Nm-5nz">
-                                            <rect key="frame" x="334" y="0.0" width="55" height="45"/>
+                                            <rect key="frame" x="353" y="5" width="42" height="36"/>
                                             <constraints>
-                                                <constraint firstAttribute="width" constant="55" id="xqQ-Wy-dKa"/>
+                                                <constraint firstAttribute="width" constant="42" id="xqQ-Wy-dKa"/>
                                             </constraints>
                                         </imageView>
+                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5WJ-uD-G21">
+                                            <rect key="frame" x="284" y="5" width="61" height="36"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="11"/>
+                                            <state key="normal" title="TableView">
+                                                <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            </state>
+                                            <connections>
+                                                <action selector="headerBtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="yrP-Mg-ZoP"/>
+                                            </connections>
+                                        </button>
                                     </subviews>
                                     <color key="backgroundColor" red="1" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     <constraints>
                                         <constraint firstItem="NJo-mf-CLm" firstAttribute="centerX" secondItem="J0w-Bj-3zp" secondAttribute="centerX" constant="-135" id="0r5-36-qKj"/>
                                         <constraint firstAttribute="bottom" secondItem="NJo-mf-CLm" secondAttribute="bottom" constant="16" id="1XE-tk-7po"/>
-                                        <constraint firstItem="BGS-Nm-5nz" firstAttribute="height" secondItem="J0w-Bj-3zp" secondAttribute="height" constant="-2" id="5pQ-VP-fAh"/>
+                                        <constraint firstItem="BGS-Nm-5nz" firstAttribute="height" secondItem="J0w-Bj-3zp" secondAttribute="height" constant="-11" id="5pQ-VP-fAh"/>
                                         <constraint firstItem="NJo-mf-CLm" firstAttribute="top" secondItem="J0w-Bj-3zp" secondAttribute="top" constant="15" id="PEg-h6-bBH"/>
-                                        <constraint firstItem="BGS-Nm-5nz" firstAttribute="top" secondItem="J0w-Bj-3zp" secondAttribute="top" id="Ru8-LG-a7O"/>
-                                        <constraint firstAttribute="trailing" secondItem="BGS-Nm-5nz" secondAttribute="trailing" constant="25" id="Y1N-79-3YO"/>
+                                        <constraint firstItem="BGS-Nm-5nz" firstAttribute="top" secondItem="J0w-Bj-3zp" secondAttribute="top" constant="5" id="Ru8-LG-a7O"/>
+                                        <constraint firstAttribute="trailing" secondItem="BGS-Nm-5nz" secondAttribute="trailing" constant="19" id="Y1N-79-3YO"/>
                                     </constraints>
                                     <connections>
+                                        <outlet property="headerButton" destination="5WJ-uD-G21" id="FxU-tA-eub"/>
                                         <outlet property="headerImage" destination="BGS-Nm-5nz" id="F5r-1v-aMo"/>
                                         <outlet property="headerLabel" destination="NJo-mf-CLm" id="byI-3P-39d"/>
                                     </connections>
